@@ -3,19 +3,12 @@ def has_negatives(a):
     YOUR CODE HERE
     """
     # Your code here
-    table = {}
+    s = dict()
+    result = []
     for i in a:
-        if i > 0:
-            table[i] = 0
-
-    for i in a:
-        if i < 0:
-            try:
-                table[abs(i)] = 1
-            except:
-                pass
-
-    result = [i for i in table if table[i]>0]
+        s[i] = 1
+        if i != 0 and -i in s:
+            result.append(abs(i))
     return result
 
 
